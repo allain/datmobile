@@ -95,7 +95,7 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-//    buildToolsVersion rootProject.ext.buildToolsVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.datmobile"
@@ -142,24 +142,7 @@ android {
             }
         }
     }
-
-    /* packagingOptions {
-         pickFirst 'lib/x86/libc++_shared.so'
-         pickFirst 'lib/x86_64/libjsc.so'
-         pickFirst 'lib/arm64-v8a/libjsc.so'
-         pickFirst 'lib/arm64-v8a/libc++_shared.so'
-         pickFirst 'lib/x86_64/libc++_shared.so'
-         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
-     }*/
 }
-
-/*
-configurations.all {
-    resolutionStrategy {
-        force 'org.webkit:android-jsc:r236355'
-    }
-}
-*/
 
 dependencies {
     implementation project(':react-native-fs')
@@ -169,7 +152,7 @@ dependencies {
     implementation project(':react-native-webview')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.facebook.react:react-native:0.58.5"  // From node_modules
+    implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation project(':react-native-randombytes')
 }
 
